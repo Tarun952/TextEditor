@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-// Java Program to create a text editor using java
 
 import javax.swing.*;
 import javax.swing.plaf.metal.*;
@@ -26,16 +20,16 @@ class Editor extends JFrame implements ActionListener {
         f = new JFrame("Tarun New Editor");
  
         try {
-            // Set metal look and feel
+      
             UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
  
-            // Set theme to ocean
+         
             MetalLookAndFeel.setCurrentTheme(new OceanTheme());
         }
         catch (Exception e) {
         }
  
-        // Text component
+     
         t = new JTextArea();
  
         // Create a menubar
@@ -110,19 +104,18 @@ class Editor extends JFrame implements ActionListener {
             // Create an object of JFileChooser class
             JFileChooser j = new JFileChooser("f:");
  
-            // Invoke the showsSaveDialog function to show the save dialog
             int r = j.showSaveDialog(null);
  
             if (r == JFileChooser.APPROVE_OPTION) {
  
-                // Set the label to the path of the selected directory
+             
                 File fi = new File(j.getSelectedFile().getAbsolutePath());
  
                 try {
                     // Create a file writer
                     FileWriter wr = new FileWriter(fi, false);
  
-                    // Create buffered writer to write
+                   
                     BufferedWriter w = new BufferedWriter(wr);
  
                     // Write
@@ -152,28 +145,25 @@ class Editor extends JFrame implements ActionListener {
             // Create an object of JFileChooser class
             JFileChooser j = new JFileChooser("f:");
  
-            // Invoke the showsOpenDialog function to show the save dialog
             int r = j.showOpenDialog(null);
  
-            // If the user selects a file
             if (r == JFileChooser.APPROVE_OPTION) {
-                // Set the label to the path of the selected directory
+         
                 File fi = new File(j.getSelectedFile().getAbsolutePath());
  
                 try {
                     // String
                     String s1 = "", sl = "";
  
-                    // File reader
+                   
                     FileReader fr = new FileReader(fi);
  
-                    // Buffered reader
+            
                     BufferedReader br = new BufferedReader(fr);
  
-                    // Initialize sl
                     sl = br.readLine();
  
-                    // Take the input from the file
+             
                     while ((s1 = br.readLine()) != null) {
                         sl = sl + "\n" + s1;
                     }
@@ -186,7 +176,7 @@ class Editor extends JFrame implements ActionListener {
                     JOptionPane.showMessageDialog(f, evt.getMessage());
                 }
             }
-            // If the user cancelled the operation
+          
             else
                 JOptionPane.showMessageDialog(f, "the user cancelled the operation");
         }
